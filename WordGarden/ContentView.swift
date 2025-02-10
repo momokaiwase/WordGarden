@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var guessedLetter = ""
     @State private var imageName = "flower8"
     @State private var playAgainHidden = true
+    @State private var revealedWord = ""
     @FocusState private var textFieldIsFocused: Bool
     var body: some View {
         VStack {
@@ -37,7 +38,7 @@ struct ContentView: View {
                 .font(.title)
                 .multilineTextAlignment(.center)
                 .padding()
-            Text("_ _ _ _ _")
+            Text(revealedWord)
                 .font(.title)
             
             if playAgainHidden {
@@ -64,7 +65,7 @@ struct ContentView: View {
                     
                     Button("Guess a Letter:") {
                         //TODO: Guess a letter button action here
-                        playAgainHidden = false
+                        playAgainHidden = false //textFieldIsHidden = false?
                     }
                     .buttonStyle(.bordered)
                     .tint(.mint)
